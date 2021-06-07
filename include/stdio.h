@@ -1,0 +1,3 @@
+
+int geti();
+char getc();

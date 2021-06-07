@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.sass": "scss",
+        "*.js": "javascriptreact",
+        "string.h": "c",
+        "__config": "c"
+    }
+}
