@@ -1,4 +1,4 @@
-RAMDISK = ramdisk.img
+IMAGE = nadia.img
 build: builds
 	sudo rm -f ./builds/*.img;
 	make all -C ./boot

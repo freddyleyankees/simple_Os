@@ -49,6 +49,7 @@ ramdisk.img:
 	#create disk floppy
 	mkdosfs -C $@ 144
 	mkdosfs -F 12 $@
+#add file system ramdisk as root
 
 all:  $(RAMDISK) $(KERNEL) $(UTASK)
 	mkdosfs -C $(IMAGE) 1440;
@@ -59,3 +60,4 @@ all:  $(RAMDISK) $(KERNEL) $(UTASK)
 	sudo umount /mnt;
 	sudo losetup -d /dev/loop0;
 	dd if=$(O_FBOOT) of=$(IMAGE) bs=512 count=1 conv=notrunc
+	cp $(IMAGE) ..
