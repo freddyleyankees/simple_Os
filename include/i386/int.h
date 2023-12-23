@@ -172,4 +172,4 @@ extern void pageFault(reg_t*);
 extern void reserve(reg_t*);
 extern void copError(reg_t*);
 #endif
-void trap_init();
+void trap_install(); 

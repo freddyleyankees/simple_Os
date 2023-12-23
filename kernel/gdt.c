@@ -1,4 +1,4 @@
-#define GDT
+#define __GDT__
 #include "../include/i386/gdt.h"
 #include "../include/string.h"
 #include "../include/kernel.h"

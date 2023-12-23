@@ -1,5 +1,5 @@
 #define GDTSIZE 5
-struct gdt_desc										// segment _descriptor gdt
+struct GDT										// segment _descriptor gdt
 {
 	unsigned short limit0_15;
 	unsigned short address0_15;
@@ -17,7 +17,7 @@ struct gdtr
 	unsigned int address;
 };
 
-struct tss_desc {
+struct TSS {
     unsigned short    p_task, u_p_task;
     unsigned int    esp0;
     unsigned short    ss0, u_ss0;
@@ -37,14 +37,14 @@ struct tss_desc {
     unsigned short    debug, iomap;
 } __attribute__ ((packed));
 
-#ifdef GDT
+#ifdef __GDT__
 	unsigned int entryStart = 0;
-	struct gdt_desc *gdt;
-	struct tss_desc tss;
+	struct GDT *gdt;
+	struct TSS tss;
 #else
 	extern unsigned int entryStart;
-	extern struct gdt_desc *gdt;
-	extern struct tss_desc tss;
+	extern struct GDT *gdt;
+	extern struct TSS tss;
 #endif
 
 #define ltr(a) asm volatile("movl %0, %%eax; ltr %%ax"::"r"(a));

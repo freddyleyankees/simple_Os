@@ -25,7 +25,7 @@ void main(struct boot_desc* sys)
     gdt = (struct gdt_desc*) sys->gdt;
     init_gdt();
     inidt();
-    trap_init();
+    trap_install();
     initTimer(100);
     init_kbd();
     i_syscall();

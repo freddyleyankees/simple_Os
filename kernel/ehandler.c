@@ -74,7 +74,7 @@ static void resrvedExcep(){
 		reg_handler(i, &reserve);
 }
 
-void trap_init(){
+void trap_install(){
 	divideExcep();
 	debugExcep();
 	nmExcep();
